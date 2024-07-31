@@ -422,6 +422,7 @@ body {
   color: #0e4cea;
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .button--primary {
