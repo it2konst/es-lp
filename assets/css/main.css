@@ -346,6 +346,8 @@ body {
 @media screen and (max-width: 768px) {
   .programs__title {
     align-items: start;
+    margin-bottom: 40px;
+    gap: 8px;
   }
 }
 
@@ -376,7 +378,7 @@ body {
 .item02-inner p:first-of-type,
 .item03-inner p:first-of-type {
   font-weight: 900;
-  font-size: 64px;
+  font-size: calc(48px + 16 * (100vw - 360px) / 1080);
   line-height: 0.9;
   letter-spacing: -0.01em;
   text-shadow: -1px -1px 4px rgba(0, 0, 0, 0.24), 1px 1px 4px rgba(255, 255, 255, 0.34);
@@ -396,6 +398,11 @@ body {
 .item01-inner p:first-of-type {
   color: #4a8cff;
 }
+@media screen and (max-width: 768px) {
+  .item01-inner {
+    transform: rotate(0deg);
+  }
+}
 
 .item02-inner p:first-of-type {
   color: #ffa500;
@@ -406,6 +413,11 @@ body {
 }
 .item03-inner p:first-of-type {
   color: #ff5252;
+}
+@media screen and (max-width: 768px) {
+  .item03-inner {
+    transform: rotate(0deg);
+  }
 }
 
 .button {
