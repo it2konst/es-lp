@@ -2,10 +2,6 @@
     padding: 100px 20px;
     background-color: $white;
     text-align: center;
-
-    // @include breakpoint(md) {
-    //     padding: 100px 20px;
-    // }
 }
 
 .programs__title {
@@ -21,6 +17,10 @@
         align-items: start;
         margin-bottom: 40px;
         gap: 8px;
+
+        a {
+            margin-bottom: 12px;
+        }
     }
 }
 

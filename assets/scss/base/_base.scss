@@ -44,6 +44,8 @@ body {
 
     @include breakpoint(md) {
         text-align: left;
+        max-width: 260px;
+        margin-bottom: 40px;
     }
 }
 
