@@ -1,13 +1,22 @@
-<div align="center">
+<div align="left">
    <img src="https://github.com/devicons/devicon/blob/master/icons/vuejs/vuejs-original.svg" title="vuejs" alt="vuejs" width="40" height="40"/>&nbsp;
-   <img src="https://github.com/devicons/devicon/blob/master/icons/tailwindcss/tailwindcss-original.svg" title="tailwindcss" alt="tailwindcss" width="40" height="40"/>&nbsp;
+   <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SCSS" alt="SCSS" width="40" height="40"/>&nbsp;
    <img src="https://github.com/devicons/devicon/blob/master/icons/vitejs/vitejs-original.svg" title="vitejs" alt="vitejs" width="40" height="40"/>&nbsp;
 </div>
+
+---
 
 # 🚀 **LinguaBoost**
 
 **Description**  
-LinguaBoost – a modern website for learning English and preparing for ESL, CELPIP, and IELTS exams. Built with Vue 3, SCSS, and Vite for speed and responsiveness.
+LinguaBoost – a modern website for a company offering English learning and preparation for ESL, CELPIP, and IELTS exams. Built with Vue 3, SCSS, and Vite for speed and responsiveness.
+
+LinguaBoost – современный сайт для компании, предлагающей изучение английского языка и подготовку к экзаменам ESL, CELPIP и IELTS. Разработан с использованием Vue 3, SCSS и Vite для скорости и отзывчивости интерфейса.
+
+---
+
+## 📷 **Screenshots**
+![screenshot.jpg](https://github.com/it2konst/es-lp/public/images/screenshot.jpg)
 
 ---
 
@@ -87,14 +96,6 @@ src/
 - **Responsive UI**: Optimized for all devices (desktop, tablet, mobile).
 - **Clean Code**: SCSS for maintainable styling and modularized Vue components.
 - **Performance**: Leveraging Vite for ultra-fast build times and development.
-
----
-
-## 📷 **Screenshots**
-
-| **Landing Page**                      | **Programs Section**                    |
-| ------------------------------------- | --------------------------------------- |
-| ![Landing](./screenshots/landing.png) | ![Programs](./screenshots/programs.png) |
 
 ---
 
