@@ -1,0 +1,87 @@
+@use 'sass:math';
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+// @include media(md) {
+//   flex: 0 0 100%;
+// }
+@mixin media($breakpoint) {
+  $found: false;
+
+  @each $key, $value in $grid-breakpoints {
+    @if $key == $breakpoint {
+      $found: true;
+      @media (max-width: $value) {
+        @content;
+      }
+    }
+  }
+
+  @if not $found {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$grid-breakpoints` map.";
+  }
+}
+
+@mixin hover-media {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media (hover: none) {
+    &:hover {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+  }
+}
+
+@mixin no-tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+@function rem($pixel) {
+  @return math.div($pixel, 16) + rem;
+}
+
+// rem-clamp(14, 16);
+// rem-clamp(16, 18);
+// rem-clamp(18, 20);
+// rem-clamp(20, 24);
+// rem-clamp(22, 28);
+// rem-clamp(24, 32);
+// rem-clamp(26, 36);
+// rem-clamp(28, 40);
+// rem-clamp(30, 44);
+// rem-clamp(32, 48);
+// rem-clamp(34, 52);
+// rem-clamp(36, 56);
+
+@function remClamp($min: 16, $max: 48) {
+  $maxViewportWidth: 1200;
+  $minViewportWidth: 320;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  @return clamp(
+    #{$minSize * 1rem},
+    #{math.div(math.round($yAxisIntersection * 1000), 1000) * 1rem} +
+      #{math.div(math.round($slope * 10000), 10000) * 100vw},
+    #{$maxSize * 1rem}
+  );
+}

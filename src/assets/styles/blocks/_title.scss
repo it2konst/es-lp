@@ -1,0 +1,45 @@
+@use './../base/mixins' as mix;
+
+.app__h1 {
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: mix.remClamp(32, 48);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-title);
+  user-select: none;
+
+  text-align: center;
+  @include mix.media(sm) {
+    text-align: left;
+  }
+}
+
+.app__h2 {
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: mix.remClamp(24, 40);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-title);
+  user-select: none;
+
+  text-align: center;
+  @include mix.media(sm) {
+    text-align: left;
+  }
+}
+
+.app__p {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: mix.remClamp(18, 20);
+  line-height: 1.57;
+  color: var(--text-paragraph);
+  user-select: none;
+
+  text-align: center;
+  @include mix.media(sm) {
+    text-align: left;
+  }
+}

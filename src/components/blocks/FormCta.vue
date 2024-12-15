@@ -1,0 +1,109 @@
+<script setup>
+import imgWhatsApp from '@/assets/images/socials/whatsapp.svg'
+</script>
+
+<template>
+    <div class="cta__wrap d-flex-center">
+        <button class="btn">Contact Us</button>
+        <p class="cta__text">Chat Online With Educational Advisor</p>
+        <div class="hero__social d-flex">
+            <a href="#" class="btn btn--social">
+                <div class="svg-flex" style="width: 24px; height: 24px">
+                    <img :src="imgWhatsApp" alt="WhatsApp" width="20" />
+                </div>
+            </a>
+            <a href="#" class="btn btn--social">
+                <div class="svg-flex" style="width: 24px; height: 24px">
+                    <img :src="imgWhatsApp" alt="WhatsApp" width="20" />
+                </div>
+            </a>
+            <a href="#" class="btn btn--social">
+                <div class="svg-flex" style="width: 24px; height: 24px">
+                    <img :src="imgWhatsApp" alt="WhatsApp" width="20" />
+                </div>
+            </a>
+        </div>
+        <span class="d-flex">Or</span>
+        <button class="btn btn--text">Schedule online Meeting</button>
+    </div>
+</template>
+
+<style lang="scss">
+.cta__wrap {
+    // d-flex-center
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    max-width: rem(320);
+
+    outline: 1px solid var(--base-borderline-250);
+    border: none;
+    // border: 1px solid var(--base-borderline-250);
+    border-radius: rem(24);
+    padding: rem(28) rem(24);
+
+    box-shadow: 0 32px 64px -12px rgba(98, 173, 226, 0.5);
+    background-color: var(--white);
+    // background-color: #ccc;
+
+    .cta__text {
+        margin-top: rem(12);
+        margin-bottom: rem(32);
+
+        font-family: var(--font-family);
+        font-weight: 900;
+        font-size: rem(24);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: rgba(8, 10, 15, 0.95);
+    }
+
+    .hero__social {
+        //---d-flex---
+        gap: rem(10);
+        margin-bottom: 1rem;
+    }
+
+    span {
+        //---d-flex---
+        position: relative;
+        margin-bottom: 1rem;
+
+        font-family: var(--second-family);
+        font-weight: 600;
+        font-size: rem(10);
+        line-height: 1.3;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--base-borderline);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: rem(120);
+            height: rem(1);
+            background-color: var(--base-borderline);
+        }
+
+        &::before {
+            left: rem(-8);
+            transform: translateX(rem(-120)); // translateX(-120px);
+        }
+
+        &::after {
+            right: -8px;
+            transform: translateX(rem(120)); // translateX(120px);
+        }
+    }
+
+    .btn--text {
+        width: 100%;
+    }
+}
+</style>
