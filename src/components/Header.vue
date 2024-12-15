@@ -162,7 +162,7 @@ const toggleBurger = () => {
             flex-direction: column;
             gap: 0.6rem;
 
-            max-width: 18rem;
+            max-width: 17rem;
             width: 100%;
             padding: 3rem;
 

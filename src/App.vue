@@ -23,6 +23,8 @@ import Footer from './components/Footer.vue'
 
 <style lang="scss">
 .header {
+    margin: 0 auto;
+    max-width: rem(1900);
     width: 100%;
     height: remClamp(72, 86);
     background-color: var(--bg-section-blue-40);
