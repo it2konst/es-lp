@@ -16,7 +16,7 @@ LinguaBoost – современный сайт для компании, пре�
 ---
 
 ## 📷 **Screenshots**
-![screenshot.jpg](https://github.com/it2konst/es-lp/public/images/screenshot.jpg)
+![screenshot.jpg](https://github.com/it2konst/es-lp/blob/main/public/images/screenshot.jpg)
 
 ---
 
