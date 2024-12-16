@@ -1,0 +1,22 @@
+@use './../base/mixins' as mix;
+
+:root {
+  /*---Scroll bar colors---*/
+  --scroll-bar-color: #c5cadf;
+  --scroll-thumb-color: #70768a;
+  --scroll-thumb-hover-color: #454f6b;
+}
+
+::-webkit-scrollbar {
+  width: mix.rem(10);
+  background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: mix.rem(20);
+  background: var(--scroll-thumb-hover-color);
+}

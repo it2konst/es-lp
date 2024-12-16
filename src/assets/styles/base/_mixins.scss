@@ -36,12 +36,12 @@ $grid-breakpoints: (
     }
   }
 
-  @media (hover: none) {
-    &:hover {
-      -webkit-tap-highlight-color: transparent;
-      -webkit-touch-callout: none;
-    }
-  }
+  // @media (hover: none) {
+  //   &:hover {
+  //     -webkit-tap-highlight-color: transparent;
+  //     -webkit-touch-callout: none;
+  //   }
+  // }
 }
 
 @mixin no-tap-highlight {
@@ -78,10 +78,5 @@ $grid-breakpoints: (
   $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
   $yAxisIntersection: -$minWidth * $slope + $minSize;
 
-  @return clamp(
-    #{$minSize * 1rem},
-    #{math.div(math.round($yAxisIntersection * 1000), 1000) * 1rem} +
-      #{math.div(math.round($slope * 10000), 10000) * 100vw},
-    #{$maxSize * 1rem}
-  );
+  @return clamp(#{$minSize * 1rem}, #{math.div(math.round($yAxisIntersection * 1000), 1000) * 1rem} + #{math.div(math.round($slope * 10000), 10000) * 100vw}, #{$maxSize * 1rem});
 }

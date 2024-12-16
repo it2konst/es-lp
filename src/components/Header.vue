@@ -31,7 +31,7 @@ const toggleBurger = () => {
                 <li class="header__item"><a href="#!" class="header__link">Contact</a></li>
             </ul>
             <transition name="menu-mob">
-                <ul v-show="isBurger" @click="toggleBurger" class="header__menu-mob d-flex">
+                <ul v-show="isBurger" @click="toggleBurger" class="header__menu-mob d-flex" :class="{ active: isBurger }">
                     <li class="header__item"><a href="#header" class="header__link">Home</a></li>
                     <li class="header__item"><a href="#!" class="header__link">Programs</a></li>
                     <li class="header__item"><a href="#!" class="header__link">About</a></li>
@@ -42,6 +42,7 @@ const toggleBurger = () => {
         <div class="header__burger mob-tap" :class="{ active: isBurger }">
             <SvgHeader name="icon-burger" size="26" @click="isBurger = !isBurger" />
             <!-- <img :src="imgBurger" alt="Burger Button" width="26" height="26" @click="isBurger = !isBurger" /> -->
+            <div class="header__overlay" @click="isBurger = !isBurger"></div>
         </div>
     </div>
 </template>
@@ -175,7 +176,8 @@ const toggleBurger = () => {
                 text-transform: uppercase;
             }
 
-            &::before {
+            &::before,
+            &::after {
                 content: '';
                 display: block;
                 height: 0.2rem;
@@ -183,12 +185,16 @@ const toggleBurger = () => {
                 background-color: var(--bg-card-lighten);
             }
 
-            &::after {
-                content: '';
-                display: block;
-                height: 0.2rem;
-                width: 80%;
-                background-color: var(--bg-card-lighten);
+            &.active {
+                &::before {
+                    width: 0;
+                    animation: move 0.4s ease-in 0.2s forwards;
+                }
+
+                &::after {
+                    width: 0;
+                    animation: move 0.4s ease-in 0.4s forwards;
+                }
             }
         }
 
@@ -212,26 +218,65 @@ const toggleBurger = () => {
                 display: none;
             }
         }
+
         .header__burger {
+            position: relative;
             display: block;
             margin-left: auto;
             cursor: pointer;
 
             > div:first-of-type {
-                transition: opacity 0.2s ease-in;
+                opacity: 0.65;
+
+                transition:
+                    opacity 0.2s ease-in,
+                    transform 0.3s ease-in;
+
                 @include hover-media {
-                    opacity: 0.75;
+                    opacity: 1;
                 }
+
                 &:active {
-                    opacity: 0.75;
+                    opacity: 1;
                 }
             }
 
-            transition: transform 0.3s ease-in;
             &.active {
-                transform: rotate(180deg) scale(1.1);
+                > div:first-of-type {
+                    transform: rotate(180deg) scale(1.1);
+                }
+
+                .header__overlay {
+                    opacity: 0;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.1);
+
+                    animation: opacity 0.4s ease-in 0.2s forwards;
+                }
             }
         }
+    }
+}
+
+@keyframes move {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
     }
 }
 </style>
