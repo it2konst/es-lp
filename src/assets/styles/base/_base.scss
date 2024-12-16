@@ -162,3 +162,20 @@ body {
 .line-clamp-6 {
   -webkit-line-clamp: 6;
 }
+
+.no-highlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Отключить подсветку */
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none; /* Отключить контекстное меню */
+  user-select: none; /* Отключить выделение текста */
+  pointer-events: auto; /* Сохраняет кликабельным */
+}
+
+.mob-tap {
+  user-select: none;
+  @media (hover: none) {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+  }
+}
