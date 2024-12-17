@@ -1,5 +1,5 @@
 <script setup>
-import imgWhatsApp from '@/assets/images/socials/whatsapp.svg'
+import SvgFormCta from './icons/SvgFormCta.vue'
 </script>
 
 <template>
@@ -8,19 +8,13 @@ import imgWhatsApp from '@/assets/images/socials/whatsapp.svg'
         <p class="cta__text">Chat Online With Educational Advisor</p>
         <div class="hero__social d-flex">
             <a href="#" class="btn btn--social">
-                <div class="svg-flex" style="width: 24px; height: 24px">
-                    <img :src="imgWhatsApp" alt="WhatsApp" width="20" />
-                </div>
+                <SvgFormCta name="icon-instagram" size="24" />
             </a>
             <a href="#" class="btn btn--social">
-                <div class="svg-flex" style="width: 24px; height: 24px">
-                    <img :src="imgWhatsApp" alt="WhatsApp" width="20" />
-                </div>
+                <SvgFormCta name="icon-facebook" size="24" />
             </a>
             <a href="#" class="btn btn--social">
-                <div class="svg-flex" style="width: 24px; height: 24px">
-                    <img :src="imgWhatsApp" alt="WhatsApp" width="20" />
-                </div>
+                <SvgFormCta name="icon-whatsapp" size="24" />
             </a>
         </div>
         <span class="d-flex">Or</span>
@@ -30,7 +24,7 @@ import imgWhatsApp from '@/assets/images/socials/whatsapp.svg'
 
 <style lang="scss">
 .cta__wrap {
-    // d-flex-center
+    //---d-flex-center---
     flex-direction: column;
     width: 100%;
     height: auto;
@@ -38,13 +32,11 @@ import imgWhatsApp from '@/assets/images/socials/whatsapp.svg'
 
     outline: 1px solid var(--base-borderline-250);
     border: none;
-    // border: 1px solid var(--base-borderline-250);
     border-radius: rem(24);
     padding: rem(28) rem(24);
 
     box-shadow: 0 32px 64px -12px rgba(98, 173, 226, 0.5);
     background-color: var(--white);
-    // background-color: #ccc;
 
     .cta__text {
         margin-top: rem(12);
@@ -97,7 +89,7 @@ import imgWhatsApp from '@/assets/images/socials/whatsapp.svg'
         }
 
         &::after {
-            right: -8px;
+            right: rem(-8);
             transform: translateX(rem(120)); // translateX(120px);
         }
     }

@@ -7,16 +7,18 @@
   --scroll-thumb-hover-color: #454f6b;
 }
 
-::-webkit-scrollbar {
-  width: mix.rem(10);
-  background: var(--scroll-bar-color);
-}
+@media (hover: hover) {
+  ::-webkit-scrollbar {
+    width: mix.rem(10);
+    background: var(--scroll-bar-color);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--scroll-thumb-color);
-}
+  ::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb-color);
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  border-radius: mix.rem(20);
-  background: var(--scroll-thumb-hover-color);
+  ::-webkit-scrollbar-thumb:hover {
+    border-radius: mix.rem(20);
+    background: var(--scroll-thumb-hover-color);
+  }
 }

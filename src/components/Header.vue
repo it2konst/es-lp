@@ -1,6 +1,4 @@
 <script setup>
-// import imgLogo from '@/assets/images/logo.svg'
-// import imgBurger from '@/assets/images/header/burger.svg'
 import SvgHeader from './blocks/icons/SvgHeader.vue'
 
 import { ref } from 'vue'
@@ -20,7 +18,6 @@ const toggleBurger = () => {
     <div class="header__fixed-wrap d-flex">
         <div class="header__logo d-flex">
             <SvgHeader name="icon-logo" size="26" />
-            <!-- <img :src="imgLogo" width="26" height="26" alt="Logo" /> -->
             <p>CICCC</p>
         </div>
         <nav class="header__nav d-flex">
@@ -31,17 +28,24 @@ const toggleBurger = () => {
                 <li class="header__item"><a href="#!" class="header__link">Contact</a></li>
             </ul>
             <transition name="menu-mob">
-                <ul v-show="isBurger" @click="toggleBurger" class="header__menu-mob d-flex" :class="{ active: isBurger }">
-                    <li class="header__item"><a href="#header" class="header__link">Home</a></li>
-                    <li class="header__item"><a href="#!" class="header__link">Programs</a></li>
-                    <li class="header__item"><a href="#!" class="header__link">About</a></li>
-                    <li class="header__item"><a href="#!" class="header__link">Contact</a></li>
+                <ul v-if="isBurger" class="header__menu-mob d-flex" :class="{ active: isBurger }">
+                    <li class="header__item" @click="toggleBurger">
+                        <a href="#header" class="header__link">Home</a>
+                    </li>
+                    <li class="header__item" @click="toggleBurger">
+                        <a href="#!" class="header__link">Programs</a>
+                    </li>
+                    <li class="header__item" @click="toggleBurger">
+                        <a href="#!" class="header__link">About</a>
+                    </li>
+                    <li class="header__item" @click="toggleBurger">
+                        <a href="#!" class="header__link">Contact</a>
+                    </li>
                 </ul>
             </transition>
         </nav>
         <div class="header__burger mob-tap" :class="{ active: isBurger }">
             <SvgHeader name="icon-burger" size="26" @click="isBurger = !isBurger" />
-            <!-- <img :src="imgBurger" alt="Burger Button" width="26" height="26" @click="isBurger = !isBurger" /> -->
             <div class="header__overlay" @click="isBurger = !isBurger"></div>
         </div>
     </div>
@@ -49,17 +53,25 @@ const toggleBurger = () => {
 
 <style lang="scss">
 // Header styles
+.header.header--fixed {
+    .header__fixed-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateY(-20%);
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background-color: #eaf3ffdd;
+        backdrop-filter: blur(0.1rem);
+    }
+}
+
 .header__fixed-wrap {
+    position: relative;
+    z-index: 10;
     //---d-flex---
     flex-wrap: wrap;
     gap: rem(10);
-    width: 100%;
-
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     max-width: rem(1200);
     width: 100%;
 
@@ -67,9 +79,8 @@ const toggleBurger = () => {
     padding-bottom: remClamp(10, 16);
     padding-inline: rem(15);
 
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    background-color: #eaf3ffee;
+    transform: translateY(0);
+    transition: transform 0.4s ease-in;
 
     .header__logo {
         //---d-flex---
@@ -124,6 +135,10 @@ const toggleBurger = () => {
         }
 
         .header__menu-mob {
+            position: fixed;
+            z-index: 12;
+            top: 0;
+            left: 0;
             //---d-flex---
             flex-direction: column;
             gap: 0.6rem;
@@ -131,11 +146,6 @@ const toggleBurger = () => {
             max-width: 17rem;
             width: 100%;
             padding: 2rem;
-
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 11;
 
             background-color: var(--bg-card);
 
@@ -242,19 +252,22 @@ const toggleBurger = () => {
             }
 
             &.active {
+                z-index: 11;
                 > div:first-of-type {
                     transform: rotate(180deg) scale(1.1);
                 }
 
                 .header__overlay {
-                    opacity: 0;
                     position: fixed;
+                    z-index: -1;
                     top: 0;
                     left: 0;
-                    width: 100vw;
-                    height: 100vh;
+                    width: 105vw;
+                    height: 105vh;
+
                     background-color: rgba(0, 0, 0, 0.1);
 
+                    opacity: 0;
                     animation: opacity 0.4s ease-in 0.2s forwards;
                 }
             }

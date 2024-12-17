@@ -2,10 +2,35 @@
 import Header from './components/Header.vue'
 import Main from './components/main/Main.vue'
 import Footer from './components/Footer.vue'
+
+import { ref, onMounted } from 'vue'
+const headerFixed = ref(null)
+const options = {
+    threshold: 1,
+}
+onMounted(() => {
+    // window.addEventListener('scroll', () => {
+    //     const header = document.getElementById('header')
+    //     header.classList.toggle('header--active', window.scrollY > 0)
+    // })
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                headerFixed.value?.classList.add('header--fixed')
+                // setTimeout(() => {
+                //     headerFixed.value?.classList.remove('header--fixed')
+                // }, 5000)
+            } else {
+                headerFixed.value?.classList.remove('header--fixed')
+            }
+        })
+    }, options)
+    if (headerFixed.value) observer.observe(headerFixed.value)
+})
 </script>
 
 <template>
-    <header class="header" id="header">
+    <header ref="headerFixed" class="header" id="header">
         <!-- Component Header-->
         <Header />
     </header>
