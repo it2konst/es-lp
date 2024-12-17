@@ -8,13 +8,8 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
     <section class="hero">
         <div class="hero__container">
             <div class="hero__title-box container d-flex">
-                <h1 class="app__h1">
-                    Study English To Boost Your Career Or Pass An Immigration Exam
-                </h1>
-                <p class="app__p">
-                    Canadian International Community College offers a wide range of English courses
-                    for language development and academic growth
-                </p>
+                <h1 class="app__h1">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+                <p class="app__p">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
             </div>
             <div class="hero__col d-flex">
                 <div class="hero__col-item">
@@ -40,6 +35,7 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
     padding-top: remClamp(30, 40);
     width: 100%;
     background-color: transparent;
+    overflow: hidden;
 
     .hero__container {
         // position: relative;
@@ -55,6 +51,7 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
             height: 100%;
 
             background-color: var(--bg-section-blue-40);
+            // background-color: #ccc;
             border-bottom-left-radius: 50%;
             border-bottom-right-radius: 50%;
 

@@ -20,26 +20,26 @@ const toggleBurger = () => {
             <SvgHeader name="icon-logo" size="26" />
             <p>CICCC</p>
         </div>
-        <nav class="header__nav d-flex">
+        <nav class="header__nav d-flex mob-tap">
             <ul class="header__menu d-flex">
                 <li class="header__item"><a href="#!" class="header__link">Home</a></li>
-                <li class="header__item"><a href="#!" class="header__link">Programs</a></li>
+                <li class="header__item"><a href="#!" class="header__link">Courses</a></li>
                 <li class="header__item"><a href="#!" class="header__link">About</a></li>
-                <li class="header__item"><a href="#!" class="header__link">Contact</a></li>
+                <li class="header__item"><a href="#!" class="header__link">Contacts</a></li>
             </ul>
             <transition name="menu-mob">
-                <ul v-if="isBurger" class="header__menu-mob d-flex" :class="{ active: isBurger }">
+                <ul v-show="isBurger" class="header__menu-mob d-flex" :class="{ active: isBurger }">
                     <li class="header__item" @click="toggleBurger">
                         <a href="#header" class="header__link">Home</a>
                     </li>
                     <li class="header__item" @click="toggleBurger">
-                        <a href="#!" class="header__link">Programs</a>
+                        <a href="#!" class="header__link">Courses</a>
                     </li>
                     <li class="header__item" @click="toggleBurger">
                         <a href="#!" class="header__link">About</a>
                     </li>
                     <li class="header__item" @click="toggleBurger">
-                        <a href="#!" class="header__link">Contact</a>
+                        <a href="#!" class="header__link">Contacts</a>
                     </li>
                 </ul>
             </transition>
@@ -55,32 +55,42 @@ const toggleBurger = () => {
 // Header styles
 .header.header--fixed {
     .header__fixed-wrap {
+        //---d-flex-center---
         position: fixed;
-        top: 0;
-        left: 0;
+        // inset: 0;
+        // left: 0;
+        // right: 0;
         transform: translateY(-20%);
+        // transform: translateY(30%); // Уменьшаем высоту при прокрутке.
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
+
         background-color: #eaf3ffdd;
         backdrop-filter: blur(0.1rem);
+
+        padding-top: remClamp(23, 30);
+        padding-bottom: remClamp(10, 20);
     }
 }
 
 .header__fixed-wrap {
+    //---d-flex---
+    justify-content: space-between;
     position: relative;
     z-index: 10;
-    //---d-flex---
     flex-wrap: wrap;
     gap: rem(10);
-    max-width: rem(1200);
+    max-width: calc(remClamp(320, 1230) - rem(30));
     width: 100%;
 
-    padding-top: remClamp(23, 30);
-    padding-bottom: remClamp(10, 16);
+    margin: 0 auto;
     padding-inline: rem(15);
+    // padding-top: remClamp(23, 30);
+    // padding-bottom: remClamp(10, 16);
+    // padding-inline: rem(15);
 
     transform: translateY(0);
-    transition: transform 0.4s ease-in;
+    transition: transform 0.3s ease-in;
 
     .header__logo {
         //---d-flex---
@@ -103,33 +113,68 @@ const toggleBurger = () => {
 
     .header__nav {
         //---d-flex---
-        margin-left: auto;
+        // margin-left: auto;
         .header__menu {
             //---d-flex---
             flex-wrap: wrap;
             gap: remClamp(14, 20);
 
             .header__link {
+                position: relative;
                 display: block;
                 font-family: var(--font-family);
                 font-weight: 400;
                 font-size: remClamp(14, 18);
+                // font-size: 14px;
                 line-height: rem(26);
                 color: var(--text-paragraph);
 
-                border-bottom: 1px solid transparent;
                 transition:
-                    color 0.2s ease-in,
-                    border-color 0.4s ease-in;
+                    text-shadow 0.2s ease-in,
+                    color 0.2s ease-in;
 
-                @include hover-media {
-                    color: var(--base-primary-darken);
-                    border-color: var(--base-primary-lighten);
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 0.1rem;
+                    background-color: var(--base-primary-lighten);
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform 0.4s;
                 }
 
-                &:active {
-                    color: var(--base-primary-darken);
-                    border-color: var(--base-primary-lighten);
+                @media (hover: hover) {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        text-shadow:
+                            0px 3px 2px rgba(0, 0, 0, 0.2),
+                            0px 6px 8px rgba(0, 0, 0, 0.2),
+                            0px 12px 24px rgba(0, 0, 0, 0.2);
+                    }
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                    }
+                }
+
+                @media (hover: none) {
+                    &:active,
+                    &:focus {
+                        text-shadow:
+                            0px 3px 2px rgba(0, 0, 0, 0.2),
+                            0px 6px 8px rgba(0, 0, 0, 0.2),
+                            0px 12px 24px rgba(0, 0, 0, 0.2);
+                    }
+
+                    &:active::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                    }
                 }
             }
         }
@@ -138,7 +183,9 @@ const toggleBurger = () => {
             position: fixed;
             z-index: 12;
             top: 0;
-            left: 0;
+            left: -0.5rem;
+            // top: -1rem;
+            // left: -1rem;
             //---d-flex---
             flex-direction: column;
             gap: 0.6rem;
@@ -159,6 +206,11 @@ const toggleBurger = () => {
                 width: 100%;
                 height: 2.2rem;
                 border-radius: 2rem;
+
+                text-shadow:
+                    0px 3px 2px rgba(0, 0, 0, 0.2),
+                    0px 6px 8px rgba(0, 0, 0, 0.2),
+                    0px 12px 24px rgba(0, 0, 0, 0.2);
 
                 transition:
                     background-color 0.2s ease-in,
@@ -232,7 +284,7 @@ const toggleBurger = () => {
         .header__burger {
             position: relative;
             display: block;
-            margin-left: auto;
+            // margin-left: auto;
             cursor: pointer;
 
             > div:first-of-type {
@@ -261,9 +313,9 @@ const toggleBurger = () => {
                     position: fixed;
                     z-index: -1;
                     top: 0;
-                    left: 0;
-                    width: 105vw;
-                    height: 105vh;
+                    left: -0.5rem;
+                    width: 100vw;
+                    height: 110vh;
 
                     background-color: rgba(0, 0, 0, 0.1);
 

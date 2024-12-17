@@ -1,6 +1,6 @@
 @use './../base/mixins' as mix;
 
-:root {
+html:root {
   /*---Scroll bar colors---*/
   --scroll-bar-color: #c5cadf;
   --scroll-thumb-color: #70768a;
@@ -8,16 +8,16 @@
 }
 
 @media (hover: hover) {
-  ::-webkit-scrollbar {
+  body::-webkit-scrollbar {
     width: mix.rem(10);
     background: var(--scroll-bar-color);
   }
 
-  ::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb {
     background: var(--scroll-thumb-color);
   }
 
-  ::-webkit-scrollbar-thumb:hover {
+  body::-webkit-scrollbar-thumb:hover {
     border-radius: mix.rem(20);
     background: var(--scroll-thumb-hover-color);
   }
