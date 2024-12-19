@@ -1,0 +1,21 @@
+@use './../base/mixins' as mix;
+
+.app__heading-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: mix.rem(24);
+
+  max-width: mix.rem(806);
+  width: 100%;
+  margin-bottom: mix.rem(60);
+
+  @include mix.media(sm) {
+    align-items: start;
+  }
+
+  // &.btn {
+  //   align-self: flex-start;
+  // }
+}
