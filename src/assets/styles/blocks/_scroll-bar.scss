@@ -9,7 +9,7 @@ html:root {
 
 @media (hover: hover) {
   body::-webkit-scrollbar {
-    width: mix.rem(10);
+    width: mix.rem(8);
     background: var(--scroll-bar-color);
   }
 
@@ -18,7 +18,7 @@ html:root {
   }
 
   body::-webkit-scrollbar-thumb:hover {
-    border-radius: mix.rem(20);
+    border-radius: mix.rem(16);
     background: var(--scroll-thumb-hover-color);
   }
 }

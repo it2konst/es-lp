@@ -53,24 +53,22 @@ onMounted(() => {
     justify-content: center;
     width: 100%;
     position: relative;
-    max-width: rem(1200);
+    max-width: rem(1440);
 
     height: calc(remClamp(72, 86));
-    // height: 500px;
-    // max-height: 100vh;
     background-color: var(--bg-section-blue-40);
     flex-shrink: 0;
 }
 
 .main {
     width: 100%;
-    max-width: rem(1200);
+    max-width: rem(1440);
     // background-color: var(--bg-section-blue-40);
 }
 
 .footer {
     width: 100%;
-    max-width: rem(1200);
+    max-width: rem(1440);
     // background-color: var(--bg-section-blue-40);
 }
 </style>

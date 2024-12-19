@@ -58,7 +58,7 @@ const toggleBurger = () => {
     z-index: 10;
     flex-wrap: wrap;
     gap: rem(10);
-    max-width: calc(remClamp(320, 1230) - rem(30));
+    max-width: calc(remClamp(320, 1240) - rem(20));
     width: 100%;
     padding-inline: rem(15);
     margin: 0 auto;

@@ -16,30 +16,21 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
                 <img class="programs__item-image" :src="imgCard1" alt="ESL" />
                 <div class="programs__item-wrap">
                     <h3 class="programs__item-title">ESL</h3>
-                    <p class="programs__item-desc">
-                        Perfect for daily communication and fluency. Our ESL program suits all
-                        levels, from beginners to advanced.
-                    </p>
+                    <p class="programs__item-desc">Perfect for daily communication and fluency. Our ESL program suits all levels, from beginners to advanced.</p>
                 </div>
             </div>
             <div class="programs__item">
                 <img class="programs__item-image" :src="imgCard2" alt="CELPIP" />
                 <div class="programs__item-wrap">
                     <h3 class="programs__item-title">CELPIP</h3>
-                    <p class="programs__item-desc">
-                        Essential for aspiring Canadian residents. Our CELPIP course helps you
-                        prepare for immigration to Canada.
-                    </p>
+                    <p class="programs__item-desc">Essential for aspiring Canadian residents. Our CELPIP course helps you prepare for immigration to Canada.</p>
                 </div>
             </div>
             <div class="programs__item">
                 <img class="programs__item-image" :src="imgCard3" alt="IELTS" />
                 <div class="programs__item-wrap">
                     <h3 class="programs__item-title">IELTS</h3>
-                    <p class="programs__item-desc">
-                        Enhance your career with recognized qualifications. Excel in all test
-                        components: listening, reading, writing, and speaking.
-                    </p>
+                    <p class="programs__item-desc">Enhance your career with recognized qualifications. Excel in all test components: listening, reading, writing, and speaking.</p>
                 </div>
             </div>
         </div>
@@ -71,23 +62,34 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
 
     .programs__list {
         //---d-flex-center---
-        flex-wrap: wrap;
-        gap: rem(30);
+
+        gap: rem(32);
+        @include media(xl) {
+            flex-wrap: wrap;
+        }
         .programs__item {
             position: relative;
-            flex: 0 1 rem(379);
-            height: rem(460);
-
             display: flex;
             flex-direction: column;
-            gap: rem(24);
+            gap: 2rem;
+            // flex: 0 1 rem(379);
+            // width: 100%;
+            height: rem(460);
 
             overflow: hidden;
             border-radius: 1rem;
-            border: 2px solid var(--card-programm-title-blue-title);
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 1rem;
+                border: 2px solid var(--card-programm-title-blue-title);
+                background-color: transparent;
+            }
 
             .programs__item-image {
                 display: block;
+                max-width: remClamp(320, 379);
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -95,22 +97,19 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
 
             .programs__item-wrap {
                 position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+                inset: 0;
 
                 display: flex;
                 flex-direction: column;
-                gap: rem(8);
-                padding: rem(24);
+                gap: 0.5rem;
+                padding: 1.5rem;
                 background-color: transparent;
 
                 .programs__item-title {
                     font-family: var(--font-family);
                     font-weight: 900;
-                    font-size: rem(64);
-                    line-height: 90%;
+                    font-size: 4rem;
+                    line-height: 0.9;
                     letter-spacing: -0.01em;
                     color: var(--card-programm-title-blue-title);
 
@@ -122,7 +121,7 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
                 .programs__item-desc {
                     font-family: var(--font-family);
                     font-weight: 500;
-                    font-size: rem(16);
+                    font-size: 1rem;
                     line-height: 1.47;
                     color: var(--text-paragraph);
                 }
@@ -130,26 +129,30 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
 
             &:nth-child(1) {
                 transform: rotate(-1deg);
-                @include media(sm) {
+                @include media(xl) {
                     transform: unset;
                 }
             }
 
             &:nth-child(2) {
-                border: 2px solid var(--card-programm-title-orange-title);
-
+                // border: 2px solid var(--card-programm-title-orange-title);
+                &::after {
+                    border: 2px solid var(--card-programm-title-orange-title);
+                }
                 .programs__item-title {
                     color: var(--card-programm-title-orange-title);
                 }
             }
             &:nth-child(3) {
                 transform: rotate(1deg);
-                border: 2px solid var(--card-programm-title-red-title);
-
+                // border: 2px solid var(--card-programm-title-red-title);
+                &::after {
+                    border: 2px solid var(--card-programm-title-red-title);
+                }
                 .programs__item-title {
                     color: var(--card-programm-title-red-title);
                 }
-                @include media(sm) {
+                @include media(xl) {
                     transform: unset;
                 }
             }

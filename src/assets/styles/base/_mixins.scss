@@ -68,7 +68,7 @@ $grid-breakpoints: (
 
 @function remClamp($min: 16, $max: 48) {
   $maxViewportWidth: 1200;
-  $minViewportWidth: 320;
+  $minViewportWidth: 360;
 
   $maxSize: math.div($max, 16);
   $minSize: math.div($min, 16);

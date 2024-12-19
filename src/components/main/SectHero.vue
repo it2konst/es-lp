@@ -7,11 +7,13 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
 <template>
     <section class="hero">
         <div class="hero__container">
-            <div class="hero__title-box container d-flex">
-                <h1 class="app__h1">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
-                <p class="app__p">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
+            <div class="container">
+                <div class="hero__title-box d-flex">
+                    <h1 class="app__h1">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+                    <p class="app__p">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
+                </div>
             </div>
-            <div class="hero__col d-flex">
+            <div class="hero__col">
                 <div class="hero__col-item">
                     <img :src="imgTeacher" class="hero__image" alt="Person Teacher" />
                 </div>
@@ -29,16 +31,19 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
 
 <style lang="scss">
 // Main styles
-
 .hero {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     padding-top: remClamp(30, 40);
     width: 100%;
     background-color: transparent;
     overflow: hidden;
 
     .hero__container {
-        // position: relative;
+        width: 100%;
         &::after {
             content: '';
             position: absolute;
@@ -47,11 +52,10 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
             transform: translateX(-50%);
             z-index: -1;
 
-            width: rem(1900);
+            width: rem(1940);
             height: 100%;
 
             background-color: var(--bg-section-blue-40);
-            // background-color: #ccc;
             border-bottom-left-radius: 50%;
             border-bottom-right-radius: 50%;
 
@@ -62,34 +66,19 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
         }
     }
 
-    .hero__bg {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -10%);
-        width: rem(1440);
-        height: rem(950);
-        z-index: -1;
-
-        img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
     .hero__title-box {
         //---d-flex---
+        margin: 0 auto;
+
         gap: rem(24);
         flex-direction: column;
         margin-bottom: rem(40);
 
         max-width: remClamp(320, 842);
         width: 100%;
-
         .app__p {
             max-width: remClamp(320, 680);
+            width: 100%;
         }
 
         @include media(sm) {
@@ -98,56 +87,66 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
     }
 
     .hero__col {
-        //---d-flex---
-        position: relative;
-        margin: 0 auto;
+        display: flex;
+        align-items: center;
         justify-content: space-between;
-        max-width: rem(1400);
-
         width: 100%;
         gap: rem(35);
+        padding-inline: rem(20);
+
+        @include media(xl) {
+            justify-content: center;
+        }
 
         @include media(md) {
-            justify-content: center;
             flex-wrap: wrap;
         }
 
-        &-item {
+        .hero__col-item {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-
             width: 100%;
-            max-width: 100%;
 
             img {
                 display: block;
                 width: 100%;
-                height: auto;
+                height: 100%;
                 object-fit: cover;
             }
-        }
 
-        &-item:nth-child(1) {
-            max-width: remClamp(320, 398);
-            transform: translate(8%, -24%) rotate(-7deg);
-
-            @include media(md) {
-                display: none;
-                transform: unset;
+            &:nth-of-type(1) {
+                transform: translate(4%, -23%) rotate(-7deg);
+                width: 100%;
+                img {
+                    max-width: remClamp(320, 396);
+                }
+                @include media(xl) {
+                    display: none;
+                    transform: unset;
+                }
             }
-        }
 
-        &-item:nth-child(2) {
-            align-self: flex-start;
-        }
+            &:nth-of-type(2) {
+                align-self: flex-start;
+                width: 100%;
+                @include media(xl) {
+                    align-self: unset;
+                    margin-left: auto;
+                }
+            }
 
-        &-item:nth-child(3) {
-            max-width: remClamp(320, 382);
-            transform: translate(-8%, -24%) rotate(9deg);
-
-            @include media(md) {
-                transform: unset;
+            &:nth-of-type(3) {
+                transform: translate(-4%, -23%) rotate(9deg);
+                width: 100%;
+                img {
+                    max-width: remClamp(320, 382);
+                }
+                @include media(xl) {
+                    transform: unset;
+                    margin-right: auto;
+                }
             }
         }
     }

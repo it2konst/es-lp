@@ -53,6 +53,8 @@ import SvgFormCta from './icons/SvgFormCta.vue'
 
     .hero__social {
         //---d-flex---
+        justify-content: center;
+        flex-wrap: wrap;
         gap: rem(10);
         margin-bottom: 1rem;
     }
