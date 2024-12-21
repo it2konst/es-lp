@@ -27,7 +27,7 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
                     </div>
                     <div class="study-mode__description">Location, accessible by public transport or car. Convenient for studying before or after work.</div>
                 </div>
-                <img :src="imgMap" alt="Offline learning location" class="study-mode__image" />
+                <img class="study-mode__image" :src="imgMap" alt="Offline learning location" />
             </div>
             <div class="study-mode study-mode--online">
                 <div class="study-mode__content">
@@ -37,7 +37,7 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
                     </div>
                     <div class="study-mode__description">Join convenient, affordable online classes from home. Flexible to balance with other commitments.</div>
                 </div>
-                <img :src="imgOnline" alt="Online learning platform" class="study-mode__image" />
+                <img class="study-mode__image" :src="imgOnline" alt="Online learning platform" />
             </div>
         </div>
     </section>
@@ -80,6 +80,15 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
 
                 @include media(xl) {
                     display: none;
+                }
+
+                > div {
+                    transition: transform 0.2s ease-in;
+                    @media (hover: hover) {
+                        &:hover {
+                            transform: scale(1.02);
+                        }
+                    }
                 }
             }
         }
@@ -228,6 +237,13 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
                     .study-mode__title {
                         color: var(--card-study-green-icons);
                     }
+                }
+            }
+
+            transition: transform 0.2s ease-in;
+            @media (hover: hover) {
+                &:hover {
+                    transform: rotate(0deg) scale(1.01);
                 }
             }
         }

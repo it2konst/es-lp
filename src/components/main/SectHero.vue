@@ -10,19 +10,19 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
         <div class="hero__container">
             <div class="container">
                 <div class="hero__title-box d-flex">
-                    <h1 class="app__h1" v-animate="{}">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
-                    <p class="app__p" v-animate="{}">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
+                    <h1 class="app__h1 opacity-0" v-animate="{}">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+                    <p class="app__p opacity-0" v-animate="{}">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
                 </div>
             </div>
             <div class="hero__col">
-                <div class="hero__col-item" v-animate="{ animation: 'animate__zoomInLeft' }">
+                <div class="hero__col-item opacity-0" v-animate="{ animation: 'animate__zoomInLeft' }">
                     <img :src="imgTeacher" alt="Person Teacher" class="hero__image" />
                 </div>
                 <div class="hero__col-item">
                     <!-- Component FormCta-->
                     <FormCta v-animate="{}" />
                 </div>
-                <div class="hero__col-item" v-animate="{ animation: 'animate__zoomInRight' }">
+                <div class="hero__col-item opacity-0" v-animate="{ animation: 'animate__zoomInRight' }">
                     <img :src="imgStudent" alt="Person Student" class="hero__image" />
                 </div>
             </div>

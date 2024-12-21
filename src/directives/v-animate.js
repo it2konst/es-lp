@@ -4,6 +4,10 @@ import { ref } from 'vue'
 export default {
     mounted(el, binding) {
         const { animation = 'animate__fadeInUp', duration = 1000 } = binding.value
+        const obj = {
+            baseAnimateClass: 'animate__animated',
+            opacityZeroClass: 'opacity-0',
+        }
         const animationClass = ref('')
 
         const observer = new IntersectionObserver(
@@ -11,9 +15,11 @@ export default {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         animationClass.value = animation
-                        el.classList.add('animate__animated', animationClass.value)
+                        el.classList.add(obj.baseAnimateClass, animationClass.value)
+                        el.classList.remove(obj.opacityZeroClass)
                         setTimeout(() => {
                             el.classList.remove(animationClass.value)
+                            el.classList.remove(obj.baseAnimateClass)
                         }, duration)
                     }
                 })

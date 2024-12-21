@@ -167,6 +167,13 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
                 line-height: 1.47;
                 color: var(--text-paragraph);
             }
+
+            transition: transform 0.2s ease-in;
+            @media (hover: hover) {
+                &:hover {
+                    transform: rotate(0deg) scale(1.01);
+                }
+            }
         }
     }
 }

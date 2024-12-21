@@ -9,10 +9,13 @@
 
 .btn {
   display: inline-block;
-  padding-inline: calc(1rem - 1px);
+  // padding-inline: calc(1rem - 1px);
+  padding-inline: 1rem;
   border-radius: mix.rem(206);
-  border: 1px solid var(--base-primary);
-  outline: none;
+  border: none;
+  // border: 1px solid var(--base-primary);
+  // outline: none;
+  outline: 1px solid var(--base-primary);
   background-color: var(--white);
   white-space: nowrap;
   overflow: hidden;
@@ -22,7 +25,8 @@
   font-family: var(--font-family);
   font-weight: 500;
   font-size: mix.rem(12);
-  line-height: calc(2rem - 2px);
+  // line-height: calc(2rem - 2px);
+  line-height: 2rem;
   // letter-spacing: 0.00291rem;
   text-align: center;
   color: var(--base-primary);
@@ -30,7 +34,8 @@
   transition:
     background-color 0.2s ease-in,
     color 0.2s ease-in,
-    box-shadow 0.2s ease-in;
+    box-shadow 0.2s ease-in,
+    transform 0.1s ease-in;
 
   @media (hover: hover) {
     &:hover {
@@ -43,6 +48,17 @@
   &:active {
     background-color: var(--base-primary);
     color: var(--white);
+    transform: scale(0.96);
+
+    @media (hover: none) {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-touch-callout: none;
+    }
+  }
+
+  &:focus {
+    outline: 1px solid var(--base-primary);
   }
 }
 

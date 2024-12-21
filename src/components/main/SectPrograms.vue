@@ -81,6 +81,7 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
             &::after {
                 content: '';
                 position: absolute;
+                z-index: 2;
                 inset: 0;
                 border-radius: 1rem;
                 border: 2px solid var(--card-programm-title-blue-title);
@@ -88,6 +89,7 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
             }
 
             .programs__item-image {
+                z-index: 1;
                 display: block;
                 max-width: remClamp(320, 379);
                 width: 100%;
@@ -98,7 +100,7 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
             .programs__item-wrap {
                 position: absolute;
                 inset: 0;
-
+                z-index: 3;
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
@@ -154,6 +156,13 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
                 }
                 @include media(xl) {
                     transform: unset;
+                }
+            }
+
+            transition: transform 0.2s ease-in;
+            @media (hover: hover) {
+                &:hover {
+                    transform: rotate(0deg) scale(1.01);
                 }
             }
         }
