@@ -2,6 +2,8 @@
 import FormCta from './../blocks/FormCta.vue'
 import imgTeacher from '@/assets/images/hero/hero-teacher.webp'
 import imgStudent from '@/assets/images/hero/hero-student.webp'
+
+import AppAnimate from './../AppAnimate.vue'
 </script>
 
 <template>
@@ -9,20 +11,28 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
         <div class="hero__container">
             <div class="container">
                 <div class="hero__title-box d-flex">
-                    <h1 class="app__h1 animate__animated animate__rubberBand">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+                    <AppAnimate animation="animate__rubberBand" baseClass="app__h1">
+                        <h1>Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+                    </AppAnimate>
                     <p class="app__p">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
                 </div>
             </div>
             <div class="hero__col">
                 <div class="hero__col-item">
-                    <img :src="imgTeacher" class="hero__image animate__animated animate__zoomInLeft" alt="Person Teacher" />
+                    <AppAnimate animation="animate__zoomInLeft" baseClass="hero__image">
+                        <img :src="imgTeacher" alt="Person Teacher" />
+                    </AppAnimate>
                 </div>
                 <div class="hero__col-item">
-                    <!-- Component FormCta-->
-                    <FormCta />
+                    <AppAnimate animation="animate__slideInUp" baseClass="">
+                        <!-- Component FormCta-->
+                        <FormCta />
+                    </AppAnimate>
                 </div>
                 <div class="hero__col-item">
-                    <img :src="imgStudent" class="hero__image animate__animated animate__zoomInRight" alt="Person Student" />
+                    <AppAnimate animation="animate__zoomInRight" baseClass="hero__image">
+                        <img :src="imgStudent" alt="Person Student" />
+                    </AppAnimate>
                 </div>
             </div>
         </div>
