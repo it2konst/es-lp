@@ -3,7 +3,7 @@ import SvgFormCta from './icons/SvgFormCta.vue'
 </script>
 
 <template>
-    <div class="cta__wrap d-flex-center">
+    <div class="cta__wrap d-flex-center animate__animated animate__slideInUp">
         <button class="btn">Contact Us</button>
         <p class="cta__text">Chat Online With Educational Advisor</p>
         <div class="hero__social d-flex">

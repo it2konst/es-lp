@@ -9,20 +9,20 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
         <div class="hero__container">
             <div class="container">
                 <div class="hero__title-box d-flex">
-                    <h1 class="app__h1">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
-                    <p class="app__p">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
+                    <h1 class="app__h1 animate__animated animate__slideInUp">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+                    <p class="app__p animate__animated animate__fadeInUp">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
                 </div>
             </div>
             <div class="hero__col">
                 <div class="hero__col-item">
-                    <img :src="imgTeacher" class="hero__image" alt="Person Teacher" />
+                    <img :src="imgTeacher" class="hero__image animate__animated animate__zoomInLeft" alt="Person Teacher" />
                 </div>
                 <div class="hero__col-item">
                     <!-- Component FormCta-->
                     <FormCta />
                 </div>
                 <div class="hero__col-item">
-                    <img :src="imgStudent" class="hero__image" alt="Person Student" />
+                    <img :src="imgStudent" class="hero__image animate__animated animate__zoomInRight" alt="Person Student" />
                 </div>
             </div>
         </div>
