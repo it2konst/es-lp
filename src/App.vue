@@ -48,27 +48,27 @@ onMounted(() => {
 
 <style lang="scss">
 .header {
-    display: flex;
-    // align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: relative;
+    flex: 0 0 auto;
     max-width: rem(1440);
+    width: 100%;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
 
     height: calc(remClamp(72, 86));
     background-color: var(--bg-section-blue-40);
-    flex-shrink: 0;
 }
 
 .main {
-    width: 100%;
+    flex: 1 0 auto;
     max-width: rem(1440);
-    // background-color: var(--bg-section-blue-40);
+    width: 100%;
 }
 
 .footer {
-    width: 100%;
+    flex: 0 0 auto;
     max-width: rem(1440);
-    // background-color: var(--bg-section-blue-40);
+    width: 100%;
 }
 </style>

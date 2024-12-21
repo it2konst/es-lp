@@ -2,15 +2,17 @@
 import SectHero from './SectHero.vue'
 import SectPrograms from './SectPrograms.vue'
 import SectFeatures from './SectFeatures.vue'
+import SectStudyModes from './SectStudyModes.vue'
 </script>
 
 <template>
-    <!-- Component SectHero-->
     <SectHero />
-    <!-- Component SectPrograms-->
+
     <SectPrograms />
-    <!-- Component SectFeatures-->
+
     <SectFeatures />
+
+    <SectStudyModes />
 </template>
 
 <style lang="scss">

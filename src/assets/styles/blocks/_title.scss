@@ -7,8 +7,7 @@
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--text-title);
-  user-select: none;
-
+  // user-select: none;
   text-align: center;
   @include mix.media(sm) {
     text-align: left;
@@ -22,8 +21,7 @@
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--text-title);
-  user-select: none;
-
+  // user-select: none;
   text-align: center;
   @include mix.media(sm) {
     text-align: left;
@@ -36,8 +34,7 @@
   font-size: mix.remClamp(18, 20);
   line-height: 1.57;
   color: var(--text-paragraph);
-  user-select: none;
-
+  // user-select: none;
   text-align: center;
   @include mix.media(sm) {
     text-align: left;

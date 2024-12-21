@@ -8,6 +8,7 @@
 // Footer styles
 
 .footer__container {
+    max-width: 100%;
     width: 100%;
     height: 5rem;
     background-color: #999;

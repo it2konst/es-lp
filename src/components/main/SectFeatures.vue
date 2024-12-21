@@ -49,6 +49,7 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
     display: flex;
     align-items: center;
     flex-direction: column;
+    max-width: 100%;
     width: 100%;
     padding-block: rem(100);
     // background-color: #ccc;
@@ -78,14 +79,15 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
 
             width: 100%;
             max-width: rem(373);
-            border-radius: 1.5rem;
             padding: 2.625rem 1.5rem 1.5rem 1.5rem;
-
             transform: rotate(-1deg);
+
+            border-radius: 1.5rem;
+            background-color: transparent;
 
             &::after {
                 content: '';
-                z-index: 1;
+                z-index: -1;
                 position: absolute;
                 inset: 0;
                 border-radius: 1.5rem;
@@ -94,7 +96,6 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
             }
 
             &-img-wrap {
-                z-index: 2;
                 position: absolute;
                 display: flex;
                 align-items: center;
