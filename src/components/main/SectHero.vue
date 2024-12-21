@@ -1,9 +1,8 @@
 <script setup>
+import vAnimate from './../../directives/v-animate'
 import FormCta from './../blocks/FormCta.vue'
 import imgTeacher from '@/assets/images/hero/hero-teacher.webp'
 import imgStudent from '@/assets/images/hero/hero-student.webp'
-
-import AppAnimate from './../AppAnimate.vue'
 </script>
 
 <template>
@@ -11,28 +10,20 @@ import AppAnimate from './../AppAnimate.vue'
         <div class="hero__container">
             <div class="container">
                 <div class="hero__title-box d-flex">
-                    <AppAnimate animation="animate__rubberBand" baseClass="app__h1">
-                        <h1>Study English To Boost Your Career Or Pass An Immigration Exam</h1>
-                    </AppAnimate>
-                    <p class="app__p">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
+                    <h1 class="app__h1" v-animate="{}">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+                    <p class="app__p" v-animate="{}">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
                 </div>
             </div>
             <div class="hero__col">
-                <div class="hero__col-item">
-                    <AppAnimate animation="animate__zoomInLeft" baseClass="hero__image">
-                        <img :src="imgTeacher" alt="Person Teacher" />
-                    </AppAnimate>
+                <div class="hero__col-item" v-animate="{ animation: 'animate__zoomInLeft' }">
+                    <img :src="imgTeacher" alt="Person Teacher" class="hero__image" />
                 </div>
                 <div class="hero__col-item">
-                    <AppAnimate animation="animate__slideInUp" baseClass="">
-                        <!-- Component FormCta-->
-                        <FormCta />
-                    </AppAnimate>
+                    <!-- Component FormCta-->
+                    <FormCta v-animate="{}" />
                 </div>
-                <div class="hero__col-item">
-                    <AppAnimate animation="animate__zoomInRight" baseClass="hero__image">
-                        <img :src="imgStudent" alt="Person Student" />
-                    </AppAnimate>
+                <div class="hero__col-item" v-animate="{ animation: 'animate__zoomInRight' }">
+                    <img :src="imgStudent" alt="Person Student" class="hero__image" />
                 </div>
             </div>
         </div>

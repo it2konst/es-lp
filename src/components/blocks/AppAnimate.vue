@@ -1,5 +1,10 @@
+<!-- Пример использования:
+<AppAnimate baseClass="app__h1" animation="animate__rubberBand">
+    <h1>Study English To Boost Your Career Or Pass An Immigration Exam</h1>
+</AppAnimate>
+ -->
+<!-- Основной контейнер для анимации -->
 <template>
-    <!-- Основной контейнер для анимации -->
     <div ref="animatedElement" class="animate__animated" :class="[baseClass, animationClass]">
         <slot />
     </div>

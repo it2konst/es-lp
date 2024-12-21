@@ -1,5 +1,4 @@
 <script setup>
-import 'animate.css'
 import Header from './components/Header.vue'
 import Main from './components/main/Main.vue'
 import Footer from './components/Footer.vue'
