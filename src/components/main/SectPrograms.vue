@@ -129,6 +129,17 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
                 }
             }
 
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                transition: transform 0.2s ease-in;
+                @media (hover: hover) {
+                    &:hover {
+                        transform: rotate(0deg) scale(1.01);
+                    }
+                }
+            }
+
             &:nth-child(1) {
                 transform: rotate(-1deg);
                 @include media(xl) {
@@ -156,13 +167,6 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
                 }
                 @include media(xl) {
                     transform: unset;
-                }
-            }
-
-            transition: transform 0.2s ease-in;
-            @media (hover: hover) {
-                &:hover {
-                    transform: rotate(0deg) scale(1.01);
                 }
             }
         }

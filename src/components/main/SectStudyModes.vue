@@ -202,6 +202,16 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
                 border-radius: 1rem;
             }
 
+            &.study-mode--offline,
+            &.study-mode--online {
+                transition: transform 0.2s ease-in;
+                @media (hover: hover) {
+                    &:hover {
+                        transform: rotate(0deg) scale(1.01);
+                    }
+                }
+            }
+
             &.study-mode--offline {
                 transform: rotate(-1deg);
                 border: 2px solid var(--illustration-icon-orange);
@@ -240,12 +250,12 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
                 }
             }
 
-            transition: transform 0.2s ease-in;
-            @media (hover: hover) {
-                &:hover {
-                    transform: rotate(0deg) scale(1.01);
-                }
-            }
+            // transition: transform 0.2s ease-in;
+            // @media (hover: hover) {
+            //     &:hover {
+            //         transform: rotate(0deg) scale(1.01);
+            //     }
+            // }
         }
     }
 }

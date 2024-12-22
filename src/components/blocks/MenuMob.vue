@@ -8,7 +8,7 @@ const props = defineProps({
 
 <template>
     <transition name="menu-mob">
-        <div class="menu-mob__overlay" :class="{ 'menu-mob__overlay--active': props.isBurger }" @click="emit('toggleBurger')">
+        <nav class="menu-mob__overlay" :class="{ 'menu-mob__overlay--active': props.isBurger }" @click="emit('toggleBurger')">
             <ul class="menu-mob__list d-flex mob-tap">
                 <li class="menu-mob__item">
                     <a href="#header" class="menu-mob__link">Home</a>
@@ -23,7 +23,7 @@ const props = defineProps({
                     <a href="#!" class="menu-mob__link">Contacts</a>
                 </li>
             </ul>
-        </div>
+        </nav>
     </transition>
 </template>
 
@@ -88,9 +88,9 @@ const props = defineProps({
         flex-direction: column;
         gap: 0.6rem;
 
-        max-width: 17rem;
+        max-width: 17rem; // 272px
         width: 100%;
-        padding: 2rem;
+        padding: 2rem; // 32px
 
         box-shadow:
             rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -105,9 +105,9 @@ const props = defineProps({
             border-radius: 2rem;
 
             text-shadow:
-                0px 3px 2px rgba(0, 0, 0, 0.2),
-                0px 6px 8px rgba(0, 0, 0, 0.2),
-                0px 12px 24px rgba(0, 0, 0, 0.2);
+                0px 3px 2px rgba(0, 0, 0, 0.1),
+                0px 6px 8px rgba(0, 0, 0, 0.1),
+                0px 12px 24px rgba(0, 0, 0, 0.1);
 
             transition:
                 background-color 0.2s ease-in,
@@ -131,11 +131,26 @@ const props = defineProps({
             text-align: center;
 
             font-family: var(--font-family);
-            font-weight: 400;
-            font-size: rem(20);
-            line-height: 2.2rem;
+            // font-weight: 400;
+            font-weight: bold;
+            font-size: 1.25rem; // 20px
+            line-height: 2.25rem; // 36px
             color: var(--text-paragraph);
             text-transform: uppercase;
+            opacity: 0.75;
+
+            transition: opacity 0.2s ease-in;
+
+            &:hover {
+                @media (hover: hover) {
+                    opacity: 1;
+                }
+            }
+
+            &:active {
+                transition: opacity 0.1s ease-in;
+                opacity: 1;
+            }
         }
 
         &::before,

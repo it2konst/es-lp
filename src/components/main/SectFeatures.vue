@@ -116,6 +116,17 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
                 }
             }
 
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                transition: transform 0.2s ease-in;
+                @media (hover: hover) {
+                    &:hover {
+                        transform: rotate(0deg) scale(1.01);
+                    }
+                }
+            }
+
             &:nth-child(2) {
                 transform: rotate(1deg);
                 &::after {
@@ -168,12 +179,12 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
                 color: var(--text-paragraph);
             }
 
-            transition: transform 0.2s ease-in;
-            @media (hover: hover) {
-                &:hover {
-                    transform: rotate(0deg) scale(1.01);
-                }
-            }
+            // transition: transform 0.2s ease-in;
+            // @media (hover: hover) {
+            //     &:hover {
+            //         transform: rotate(0deg) scale(1.01);
+            //     }
+            // }
         }
     }
 }

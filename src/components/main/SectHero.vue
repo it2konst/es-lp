@@ -37,8 +37,9 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding-top: remClamp(30, 40);
+    // padding-top: remClamp(72, 86);
+    // padding-top: remClamp(30, 40);
+    padding-top: remClamp(102, 126);
     width: 100%;
     background-color: transparent;
     overflow: hidden;

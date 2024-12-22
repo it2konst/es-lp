@@ -3,7 +3,7 @@ import Header from './components/Header.vue'
 import Main from './components/main/Main.vue'
 import Footer from './components/Footer.vue'
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 const headerFixed = ref(null)
 const options = {
     threshold: 1,
@@ -26,6 +26,10 @@ onMounted(() => {
         })
     }, options)
     if (headerFixed.value) observer.observe(headerFixed.value)
+})
+
+onUnmounted(() => {
+    observer?.disconnect()
 })
 </script>
 
@@ -55,9 +59,6 @@ onMounted(() => {
     position: relative;
     display: flex;
     justify-content: center;
-
-    height: calc(remClamp(72, 86));
-    background-color: var(--bg-section-blue-40);
 }
 
 .main {

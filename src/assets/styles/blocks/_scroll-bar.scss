@@ -8,16 +8,16 @@ html:root {
 }
 
 @media (hover: hover) {
-  body::-webkit-scrollbar {
+  #app::-webkit-scrollbar {
     width: mix.rem(8);
     background: var(--scroll-bar-color);
   }
 
-  body::-webkit-scrollbar-thumb {
+  #app::-webkit-scrollbar-thumb {
     background: var(--scroll-thumb-color);
   }
 
-  body::-webkit-scrollbar-thumb:hover {
+  #app::-webkit-scrollbar-thumb:hover {
     border-radius: mix.rem(16);
     background: var(--scroll-thumb-hover-color);
   }

@@ -13,7 +13,7 @@ defineProps({
 
 <template>
     <div>
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" :width="size" :height="size">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" loading="lazy">
             <use :href="`#${name}`" />
         </svg>
 

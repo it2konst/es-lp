@@ -14,8 +14,8 @@ const toggleBurger = () => {
     <!-- Component MenuMob-->
     <MenuMob v-show="isBurger" @toggleBurger="toggleBurger" :is-burger="isBurger" />
 
-    <div class="header__fixed-wrap d-flex">
-        <div class="header__logo d-flex mob-tap">
+    <div class="header__wrapper d-flex">
+        <div class="header__logo d-flex mob-tap" aria-label="Home" title="Home" @click="$router.push('/')">
             <SvgHeader name="icon-logo" size="26" />
             <p>CICCC</p>
         </div>
@@ -27,7 +27,7 @@ const toggleBurger = () => {
                 <li class="header__item"><a href="#!" class="header__link">Contacts</a></li>
             </ul>
         </nav>
-        <div class="header__burger mob-tap" :class="{ active: isBurger }">
+        <div class="header__burger mob-tap" :class="{ active: isBurger }" type="button" aria-label="Open menu" title="Open menu">
             <SvgHeader name="icon-burger" size="26" @click="toggleBurger" />
         </div>
     </div>
@@ -36,35 +36,37 @@ const toggleBurger = () => {
 <style lang="scss">
 // Header styles
 .header.header--fixed {
-    .header__fixed-wrap {
-        //---d-flex-center---
-        position: fixed;
-        padding-top: remClamp(23, 30);
-        padding-bottom: remClamp(10, 20);
-        transform: translateY(-20%); // Уменьшаем высоту при прокрутке.
-
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-
-        background-color: #eaf3ffdd;
-        backdrop-filter: blur(0.1rem);
+    .header__wrapper {
+        transform: translateY(-20%);
     }
 }
 
-.header__fixed-wrap {
-    //---d-flex---
-    justify-content: space-between;
-    position: relative;
+.header__wrapper {
+    position: fixed;
     z-index: 10;
+    //---d-flex---
     flex-wrap: wrap;
-    gap: rem(10);
-    max-width: calc(remClamp(320, 1240) - rem(20));
-    width: 100%;
-    padding-inline: rem(15);
-    margin: 0 auto;
+    justify-content: space-between;
+    gap: 0.75rem; // 12px
 
+    max-width: 77.5rem; // 1240px
+    width: 100%;
+    padding-inline: 1.25rem; // 20px
+    padding-top: remClamp(23, 30);
+    padding-bottom: 1.25rem; // 20px
+
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    background-color: #eaf3ffcc;
+    backdrop-filter: blur(2px);
     transform: translateY(0);
+
     transition: transform 0.3s ease-in;
+    @include media(xl) {
+        width: calc(100vw - 1.25rem); // 20px
+        padding-inline: 0.625rem; // 10px
+        padding-bottom: 0.625rem; // 10px
+    }
 
     .header__logo {
         //---d-flex---
@@ -74,7 +76,7 @@ const toggleBurger = () => {
         p {
             font-family: var(--font-family);
             font-weight: 900;
-            font-size: rem(20);
+            font-size: 1.25rem; // 20px
             line-height: rem(26);
             letter-spacing: -0.03em;
             color: var(--icon-icon-blue);
@@ -123,9 +125,9 @@ const toggleBurger = () => {
                     &:focus,
                     &:active {
                         text-shadow:
-                            0px 3px 2px rgba(0, 0, 0, 0.2),
-                            0px 6px 8px rgba(0, 0, 0, 0.2),
-                            0px 12px 24px rgba(0, 0, 0, 0.2);
+                            0px 3px 2px rgba(0, 0, 0, 0.1),
+                            0px 6px 8px rgba(0, 0, 0, 0.1),
+                            0px 12px 24px rgba(0, 0, 0, 0.1);
                     }
 
                     &:hover::after {
@@ -138,9 +140,9 @@ const toggleBurger = () => {
                     &:active,
                     &:focus {
                         text-shadow:
-                            0px 3px 2px rgba(0, 0, 0, 0.2),
-                            0px 6px 8px rgba(0, 0, 0, 0.2),
-                            0px 12px 24px rgba(0, 0, 0, 0.2);
+                            0px 3px 2px rgba(0, 0, 0, 0.1),
+                            0px 6px 8px rgba(0, 0, 0, 0.1),
+                            0px 12px 24px rgba(0, 0, 0, 0.1);
                     }
 
                     &:active::after {
