@@ -5,32 +5,34 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
 </script>
 
 <template>
-    <section class="programs container d-flex">
-        <div class="programs__heading d-flex">
-            <button class="btn">Our programs</button>
-            <h2 class="app__h2">Our Programs for Your Success</h2>
-            <p class="app__p">Choose the program that fits your goals</p>
-        </div>
-        <div class="programs__list d-flex-center">
-            <div class="programs__item">
-                <img class="programs__item-image" :src="imgCard1" alt="ESL" />
-                <div class="programs__item-wrap">
-                    <h3 class="programs__item-title">ESL</h3>
-                    <p class="programs__item-desc">Perfect for daily communication and fluency. Our ESL program suits all levels, from beginners to advanced.</p>
-                </div>
+    <section class="programs">
+        <div class="section-container d-flex">
+            <div class="programs__heading d-flex">
+                <button class="btn">Our programs</button>
+                <h2 class="app__h2">Our Programs for Your Success</h2>
+                <p class="app__p">Choose the program that fits your goals</p>
             </div>
-            <div class="programs__item">
-                <img class="programs__item-image" :src="imgCard2" alt="CELPIP" />
-                <div class="programs__item-wrap">
-                    <h3 class="programs__item-title">CELPIP</h3>
-                    <p class="programs__item-desc">Essential for aspiring Canadian residents. Our CELPIP course helps you prepare for immigration to Canada.</p>
+            <div class="programs__list d-flex-center">
+                <div class="programs__item">
+                    <img class="programs__item-image" :src="imgCard1" alt="ESL" />
+                    <div class="programs__item-wrap">
+                        <h3 class="programs__item-title">ESL</h3>
+                        <p class="programs__item-desc">Perfect for daily communication and fluency. Our ESL program suits all levels, from beginners to advanced.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="programs__item">
-                <img class="programs__item-image" :src="imgCard3" alt="IELTS" />
-                <div class="programs__item-wrap">
-                    <h3 class="programs__item-title">IELTS</h3>
-                    <p class="programs__item-desc">Enhance your career with recognized qualifications. Excel in all test components: listening, reading, writing, and speaking.</p>
+                <div class="programs__item">
+                    <img class="programs__item-image" :src="imgCard2" alt="CELPIP" />
+                    <div class="programs__item-wrap">
+                        <h3 class="programs__item-title">CELPIP</h3>
+                        <p class="programs__item-desc">Essential for aspiring Canadian residents. Our CELPIP course helps you prepare for immigration to Canada.</p>
+                    </div>
+                </div>
+                <div class="programs__item">
+                    <img class="programs__item-image" :src="imgCard3" alt="IELTS" />
+                    <div class="programs__item-wrap">
+                        <h3 class="programs__item-title">IELTS</h3>
+                        <p class="programs__item-desc">Enhance your career with recognized qualifications. Excel in all test components: listening, reading, writing, and speaking.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,11 +42,12 @@ import imgCard3 from '@/assets/images/programs/card3.webp'
 <style lang="scss">
 // Programs styles
 .programs {
+    background: var(--white);
+}
+
+.programs .section-container {
     //---d-flex---
     flex-direction: column;
-    padding-block: rem(100);
-    background: var(--white);
-    // background: #ccc;
 
     .programs__heading {
         //---d-flex---

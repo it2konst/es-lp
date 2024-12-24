@@ -8,23 +8,24 @@ const isBurger = ref(false)
 const toggleBurger = () => {
     isBurger.value = !isBurger.value
 }
+
+const emit = defineEmits(['scroll-to-element'])
 </script>
 
 <template>
     <!-- Component MenuMob-->
     <MenuMob v-show="isBurger" @toggleBurger="toggleBurger" :is-burger="isBurger" />
-
     <div class="header__wrapper d-flex">
-        <div class="header__logo d-flex mob-tap" aria-label="Home" title="Home" @click="$router.push('/')">
+        <div class="header__logo d-flex mob-tap" aria-label="Logo" title="Scroll to Top" @click="emit('scroll-to-element')">
             <SvgHeader name="icon-logo" size="26" />
             <p>CICCC</p>
         </div>
         <nav class="header__nav d-flex">
             <ul class="header__menu d-flex mob-tap">
-                <li class="header__item"><a href="#header" class="header__link">Home</a></li>
-                <li class="header__item"><a href="#!" class="header__link">Courses</a></li>
-                <li class="header__item"><a href="#!" class="header__link">About</a></li>
-                <li class="header__item"><a href="#!" class="header__link">Contacts</a></li>
+                <li class="header__item"><a href="#header" class="header__link" aria-label="Home">Home</a></li>
+                <li class="header__item"><a href="#!" class="header__link" aria-label="Courses">Courses</a></li>
+                <li class="header__item"><a href="#!" class="header__link" aria-label="About">About</a></li>
+                <li class="header__item"><a href="#!" class="header__link" aria-label="Contacts">Contacts</a></li>
             </ul>
         </nav>
         <div class="header__burger mob-tap" :class="{ active: isBurger }" type="button" aria-label="Open menu" title="Open menu">
@@ -38,6 +39,7 @@ const toggleBurger = () => {
 .header.header--fixed {
     .header__wrapper {
         transform: translateY(-20%);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
 }
 
@@ -61,7 +63,10 @@ const toggleBurger = () => {
     backdrop-filter: blur(2px);
     transform: translateY(0);
 
-    transition: transform 0.3s ease-in;
+    transition:
+        transform 0.3s ease-in,
+        box-shadow 0.6s ease-in;
+
     @include media(xl) {
         width: calc(100vw - 1.25rem); // 20px
         padding-inline: 0.625rem; // 10px

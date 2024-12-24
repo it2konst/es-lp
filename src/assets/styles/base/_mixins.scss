@@ -80,3 +80,37 @@ $grid-breakpoints: (
 
   @return clamp(#{$minSize * 1rem}, #{math.div(math.round($yAxisIntersection * 1000), 1000) * 1rem} + #{math.div(math.round($slope * 10000), 10000) * 100vw}, #{$maxSize * 1rem});
 }
+
+@mixin flex-ctr-ctr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-ctr-ctr-gap($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: #{$gap};
+}
+
+@mixin flex-wrap-ctr-ctr-gap($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: #{$gap};
+}
+
+@mixin flex-wrap-ctr-sb-gap($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: #{$gap};
+}
+
+@mixin max-w100($max-width: 100%) {
+  max-width: #{$max-width};
+  width: 100%;
+}

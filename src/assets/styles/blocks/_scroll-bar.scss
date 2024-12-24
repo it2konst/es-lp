@@ -1,6 +1,8 @@
-@use './../base/mixins' as mix;
+// html {
+//   scrollbar-gutter: stable;
+// }
 
-html:root {
+:root {
   /*---Scroll bar colors---*/
   --scroll-bar-color: #c5cadf;
   --scroll-thumb-color: #70768a;
@@ -8,17 +10,17 @@ html:root {
 }
 
 @media (hover: hover) {
-  #app::-webkit-scrollbar {
-    width: mix.rem(8);
+  ::-webkit-scrollbar {
+    width: 0.5rem;
     background: var(--scroll-bar-color);
   }
 
-  #app::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: var(--scroll-thumb-color);
   }
 
-  #app::-webkit-scrollbar-thumb:hover {
-    border-radius: mix.rem(16);
+  ::-webkit-scrollbar-thumb:hover {
+    border-radius: 1rem;
     background: var(--scroll-thumb-hover-color);
   }
 }

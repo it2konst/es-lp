@@ -5,21 +5,16 @@ import Footer from './components/Footer.vue'
 
 import { ref, onMounted, onUnmounted } from 'vue'
 const headerFixed = ref(null)
+let observer = null
 const options = {
-    threshold: 1,
+    threshold: 0.5,
 }
+
 onMounted(() => {
-    // window.addEventListener('scroll', () => {
-    //     const header = document.getElementById('header')
-    //     header.classList.toggle('header--active', window.scrollY > 0)
-    // })
-    const observer = new IntersectionObserver((entries) => {
+    observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) {
                 headerFixed.value?.classList.add('header--fixed')
-                // setTimeout(() => {
-                //     headerFixed.value?.classList.remove('header--fixed')
-                // }, 5000)
             } else {
                 headerFixed.value?.classList.remove('header--fixed')
             }
@@ -29,22 +24,28 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-    observer?.disconnect()
+    if (observer) observer.disconnect()
 })
+
+function scrollToElement() {
+    if (headerFixed.value) {
+        headerFixed.value.scrollIntoView({ behavior: 'smooth' })
+    }
+}
 </script>
 
 <template>
-    <header ref="headerFixed" class="header" id="header">
+    <header id="header" class="header app-container" ref="headerFixed">
         <!-- Component Header-->
-        <Header />
+        <Header @scroll-to-element="scrollToElement" />
     </header>
 
-    <main class="main">
+    <main class="main app-container">
         <!-- Component Main-->
         <Main />
     </main>
 
-    <footer class="footer">
+    <footer class="footer app-container">
         <!-- Component Footer -->
         <Footer />
     </footer>
@@ -52,24 +53,16 @@ onUnmounted(() => {
 
 <style lang="scss">
 .header {
-    flex: 0 0 auto;
-    max-width: rem(1440);
-    width: 100%;
-
     position: relative;
     display: flex;
     justify-content: center;
 }
 
 .main {
-    flex: 1 0 auto;
-    max-width: rem(1440);
-    width: 100%;
+    flex: 1;
 }
 
-.footer {
-    flex: 0 0 auto;
-    max-width: rem(1440);
-    width: 100%;
-}
+// .footer {
+// align-self: center;
+// }
 </style>

@@ -8,7 +8,7 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
 <template>
     <section class="hero">
         <div class="hero__container">
-            <div class="container">
+            <div class="hero__heading">
                 <div class="hero__title-box d-flex">
                     <h1 class="app__h1 opacity-0" v-animate="{}">Study English To Boost Your Career Or Pass An Immigration Exam</h1>
                     <p class="app__p opacity-0" v-animate="{}">Canadian International Community College offers a wide range of English courses for language development and academic growth</p>
@@ -65,6 +65,10 @@ import imgStudent from '@/assets/images/hero/hero-student.webp'
                 width: rem(900);
                 height: 78%;
             }
+        }
+
+        .hero__heading {
+            margin-inline: 1.25rem; // 20px
         }
     }
 

@@ -6,38 +6,40 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
 
 <template>
     <section class="study-modes">
-        <div class="app__heading-box container">
-            <button class="btn">Study Modes</button>
-            <div class="app__h2">
-                Study <span>Offline</span> or <span>Online</span>
-                <div class="study-modes__svg-wrap">
-                    <SvgStudyModes name="icon-offline" size="132" />
-                    <SvgStudyModes name="icon-online" size="132" />
+        <div class="section-container">
+            <div class="app__heading-box">
+                <button class="btn">Study Modes</button>
+                <div class="app__h2">
+                    Study <span>Offline</span> or <span>Online</span>
+                    <div class="study-modes__svg-wrap">
+                        <SvgStudyModes name="icon-offline" size="132" />
+                        <SvgStudyModes name="icon-online" size="132" />
+                    </div>
                 </div>
+                <p class="app__p">Choose the Learning Mode That Suits You Best</p>
             </div>
-            <p class="app__p">Choose the Learning Mode That Suits You Best</p>
-        </div>
 
-        <div class="study-modes__wrapper container">
-            <div class="study-mode study-mode--offline">
-                <div class="study-mode__content">
-                    <div class="study-mode__header">
-                        <h3 class="study-mode__title">Offline Learning</h3>
-                        <p class="study-mode__subtitle">Easy access to Vancouver's center</p>
+            <div class="study-modes__wrapper">
+                <div class="study-mode study-mode--offline">
+                    <div class="study-mode__content">
+                        <div class="study-mode__header">
+                            <h3 class="study-mode__title">Offline Learning</h3>
+                            <p class="study-mode__subtitle">Easy access to Vancouver's center</p>
+                        </div>
+                        <div class="study-mode__description">Location, accessible by public transport or car. Convenient for studying before or after work.</div>
                     </div>
-                    <div class="study-mode__description">Location, accessible by public transport or car. Convenient for studying before or after work.</div>
+                    <img class="study-mode__image" :src="imgMap" alt="Offline learning location" />
                 </div>
-                <img class="study-mode__image" :src="imgMap" alt="Offline learning location" />
-            </div>
-            <div class="study-mode study-mode--online">
-                <div class="study-mode__content">
-                    <div class="study-mode__header">
-                        <h3 class="study-mode__title">Online Learning</h3>
-                        <p class="study-mode__subtitle">Learn from anywhere in Canada</p>
+                <div class="study-mode study-mode--online">
+                    <div class="study-mode__content">
+                        <div class="study-mode__header">
+                            <h3 class="study-mode__title">Online Learning</h3>
+                            <p class="study-mode__subtitle">Learn from anywhere in Canada</p>
+                        </div>
+                        <div class="study-mode__description">Join convenient, affordable online classes from home. Flexible to balance with other commitments.</div>
                     </div>
-                    <div class="study-mode__description">Join convenient, affordable online classes from home. Flexible to balance with other commitments.</div>
+                    <img class="study-mode__image" :src="imgOnline" alt="Online learning platform" />
                 </div>
-                <img class="study-mode__image" :src="imgOnline" alt="Online learning platform" />
             </div>
         </div>
     </section>
@@ -47,18 +49,16 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
 // Main styles
 
 .study-modes {
+    background-color: var(--white);
+}
+
+.study-modes .section-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-    padding-block: rem(100);
-
-    // background-color: #888;
-    background-color: var(--white);
 
     .app__heading-box {
-        margin-bottom: rem(42);
+        margin-bottom: remClamp(42, 62);
         .app__h2 {
             position: relative;
             span:nth-child(1) {
@@ -71,11 +71,11 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
 
             .study-modes__svg-wrap {
                 position: absolute;
-                top: 0;
-                left: rem(-152);
-                right: rem(-152);
+                top: 0.5rem;
+                left: rem(-156);
+                right: rem(-156);
                 display: flex;
-                align-items: center;
+                // align-items: center;
                 justify-content: space-between;
 
                 @include media(xl) {
@@ -249,13 +249,6 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
                     }
                 }
             }
-
-            // transition: transform 0.2s ease-in;
-            // @media (hover: hover) {
-            //     &:hover {
-            //         transform: rotate(0deg) scale(1.01);
-            //     }
-            // }
         }
     }
 }

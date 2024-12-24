@@ -6,39 +6,40 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
 
 <template>
     <section class="features">
-        <div class="app__heading-box container">
-            <button class="btn">Benefits</button>
-            <h2 class="app__h2">What Awaits You</h2>
-            <p class="app__p">Discover the benefits of learning with us</p>
+        <div class="section-container">
+            <div class="app__heading-box">
+                <button class="btn">Benefits</button>
+                <h2 class="app__h2">What Awaits You</h2>
+                <p class="app__p">Discover the benefits of learning with us</p>
+            </div>
+            <div class="features__list">
+                <div class="features__item">
+                    <div class="features__item-img-wrap">
+                        <img :src="dataImg1" alt="Avatar" />
+                    </div>
+                    <h3 class="features__item-title">Lots of Practice</h3>
+                    <b class="features__item-subtitle">Say goodbye to boring lessons</b>
+                    <p class="features__item-text">Our practice sessions are so engaging, you'll never fall asleep in class. Get ready for interactive activities and lively discussions that make learning English fun and effective.</p>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-img-wrap">
+                        <img :src="dataImg2" alt="Avatar" />
+                    </div>
+                    <h3 class="features__item-title">Teacher Support</h3>
+                    <b class="features__item-subtitle">Yes, our teachers don't sleep either</b>
+                    <p class="features__item-text">Our dedicated teachers are always here to help, day or night. Whether you have a quick question or need detailed guidance, you can count on our support to reach your goals.</p>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-img-wrap">
+                        <img :src="dataImg3" alt="Avatar" />
+                    </div>
+                    <h3 class="features__item-title">Student Community</h3>
+                    <b class="features__item-subtitle">Practice English in a multicultural setting</b>
+                    <p class="features__item-text">Join a vibrant community of students from all over the world. Practice your English with interesting people from diverse backgrounds.</p>
+                </div>
+            </div>
+            <button class="btn btn--text">Chat with Advisor</button>
         </div>
-        <div class="features__list container">
-            <div class="features__item">
-                <div class="features__item-img-wrap">
-                    <img :src="dataImg1" alt="Avatar" />
-                </div>
-                <h3 class="features__item-title">Lots of Practice</h3>
-                <b class="features__item-subtitle">Say goodbye to boring lessons</b>
-                <p class="features__item-text">Our practice sessions are so engaging, you'll never fall asleep in class. Get ready for interactive activities and lively discussions that make learning English fun and effective.</p>
-            </div>
-            <div class="features__item">
-                <div class="features__item-img-wrap">
-                    <img :src="dataImg2" alt="Avatar" />
-                </div>
-                <h3 class="features__item-title">Teacher Support</h3>
-                <b class="features__item-subtitle">Yes, our teachers don't sleep either</b>
-                <p class="features__item-text">Our dedicated teachers are always here to help, day or night. Whether you have a quick question or need detailed guidance, you can count on our support to reach your goals.</p>
-            </div>
-            <div class="features__item">
-                <div class="features__item-img-wrap">
-                    <img :src="dataImg3" alt="Avatar" />
-                </div>
-                <h3 class="features__item-title">Student Community</h3>
-                <b class="features__item-subtitle">Practice English in a multicultural setting</b>
-                <p class="features__item-text">Join a vibrant community of students from all over the world. Practice your English with interesting people from diverse backgrounds.</p>
-            </div>
-        </div>
-
-        <button class="btn btn--text">Chat with Advisor</button>
     </section>
 </template>
 
@@ -46,14 +47,12 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
 // Main styles
 
 .features {
+    background-color: var(--bg-section-blue-40);
+}
+.features .section-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-    padding-block: rem(100);
-    // background-color: #ccc;
-    background-color: var(--bg-section-blue-40);
 
     .app__heading-box {
         margin-bottom: rem(110);

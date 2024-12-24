@@ -1,9 +1,5 @@
 @use './mixins' as mix;
 
-html {
-  // scrollbar-gutter: stable;
-}
-
 html,
 body,
 #app {
@@ -35,19 +31,17 @@ body {
   scrollbar-gutter: stable;
 }
 
-.container {
-  max-width: mix.rem(1240);
+.app-container {
+  max-width: 90rem; // 1440px
   width: 100%;
-  padding: 0 1.25rem;
-  margin: 0 auto;
 }
 
-#app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.section-container {
+  max-width: 77.5rem; // 1240px
   width: 100%;
-  height: 100%;
+  padding-block: mix.remClamp(60, 100);
+  padding-inline: 1.25rem; // 20px
+  margin: 0 auto;
 }
 
 .none {

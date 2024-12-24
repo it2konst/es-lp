@@ -8,19 +8,19 @@ const props = defineProps({
 
 <template>
     <transition name="menu-mob">
-        <nav class="menu-mob__overlay" :class="{ 'menu-mob__overlay--active': props.isBurger }" @click="emit('toggleBurger')">
+        <nav class="menu-mob__overlay" :class="{ 'menu-mob__overlay--active': props.isBurger }" @click="emit('toggleBurger')" aria-label="Burger menu">
             <ul class="menu-mob__list d-flex mob-tap">
                 <li class="menu-mob__item">
-                    <a href="#header" class="menu-mob__link">Home</a>
+                    <a href="#header" class="menu-mob__link" aria-label="Home">Home</a>
                 </li>
                 <li class="menu-mob__item">
-                    <a href="#!" class="menu-mob__link">Courses</a>
+                    <a href="#!" class="menu-mob__link" aria-label="Courses">Courses</a>
                 </li>
                 <li class="menu-mob__item">
-                    <a href="#!" class="menu-mob__link">About</a>
+                    <a href="#!" class="menu-mob__link" aria-label="About">About</a>
                 </li>
                 <li class="menu-mob__item">
-                    <a href="#!" class="menu-mob__link">Contacts</a>
+                    <a href="#!" class="menu-mob__link" aria-label="Contacts">Contacts</a>
                 </li>
             </ul>
         </nav>
