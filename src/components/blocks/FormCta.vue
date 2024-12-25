@@ -8,10 +8,10 @@ import SvgFormCta from './icons/SvgFormCta.vue'
         <p class="cta__text">Chat Online With Educational Advisor</p>
         <div class="hero__social d-flex">
             <a href="#" class="btn btn--social">
-                <SvgFormCta name="icon-instagram" size="24" />
+                <SvgFormCta name="icon-tweeter" size="24" />
             </a>
             <a href="#" class="btn btn--social">
-                <SvgFormCta name="icon-facebook" size="24" />
+                <SvgFormCta name="icon-linkedin" size="24" />
             </a>
             <a href="#" class="btn btn--social">
                 <SvgFormCta name="icon-whatsapp" size="24" />
