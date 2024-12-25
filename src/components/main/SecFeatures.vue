@@ -38,7 +38,7 @@ import dataImg3 from '@/assets/images/features/avatar3.webp'
                     <p class="features__item-text">Join a vibrant community of students from all over the world. Practice your English with interesting people from diverse backgrounds.</p>
                 </div>
             </div>
-            <button class="btn btn--text">Chat with Advisor</button>
+            <a class="btn btn--text">Chat with Advisor</a>
         </div>
     </section>
 </template>

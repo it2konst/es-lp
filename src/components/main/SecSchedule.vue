@@ -87,8 +87,8 @@ import SvgSchedule from './../blocks/icons/SvgSchedule.vue'
         row-gap: remClamp(56, 66);
 
         .schedule__date {
-            z-index: 1;
             position: relative;
+            z-index: 1;
             @include max-w100(16.8125rem); // 269px
             display: flex;
             flex-direction: column;
@@ -108,15 +108,18 @@ import SvgSchedule from './../blocks/icons/SvgSchedule.vue'
                 position: absolute;
                 inset: 0;
                 z-index: -1;
-
                 border-radius: 1.5rem; // 24px
                 box-shadow: 0 17px 20px -10px rgba(255, 140, 0, 0.3);
                 background: transparent;
-                transform: translateY(10%);
+                opacity: 0.75;
+                scale: 0.92;
+                transform: translateY(11%);
             }
 
             &::after {
-                transform: translateY(20%);
+                opacity: 0.5;
+                scale: 0.86;
+                transform: translateY(22%);
             }
 
             &:nth-child(1),
