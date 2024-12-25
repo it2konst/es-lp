@@ -5,7 +5,7 @@ import imgOnline from '@/assets/images/study-modes/study-modes-online.webp'
 </script>
 
 <template>
-    <section class="study-modes">
+    <section class="study-modes" id="study-modes">
         <div class="section-container">
             <div class="app__heading-box">
                 <button class="btn">Study Modes</button>

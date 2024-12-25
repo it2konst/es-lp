@@ -6,19 +6,19 @@ import SvgFormCta from './icons/SvgFormCta.vue'
     <div class="cta__wrap d-flex-center opacity-0">
         <button class="btn">Contact Us</button>
         <p class="cta__text">Chat Online With Educational Advisor</p>
-        <div class="hero__social d-flex">
-            <a href="#" class="btn btn--social">
+        <div class="hero__soc1als d-flex">
+            <a href="#!" class="btn btn--soc1als" aria-label="Twitter" title="Twitter">
                 <SvgFormCta name="icon-tweeter" size="24" />
             </a>
-            <a href="#" class="btn btn--social">
+            <a href="#!" class="btn btn--soc1als" aria-label="Linkedin" title="Linkedin">
                 <SvgFormCta name="icon-linkedin" size="24" />
             </a>
-            <a href="#" class="btn btn--social">
+            <a href="#!" class="btn btn--soc1als" aria-label="Whatsapp" title="Whatsapp">
                 <SvgFormCta name="icon-whatsapp" size="24" />
             </a>
         </div>
         <span class="d-flex">Or</span>
-        <button class="btn btn--text">Schedule online Meeting</button>
+        <a href="#study-modes" class="btn btn--text">Schedule online Meeting</a>
     </div>
 </template>
 
@@ -51,7 +51,7 @@ import SvgFormCta from './icons/SvgFormCta.vue'
         color: rgba(8, 10, 15, 0.95);
     }
 
-    .hero__social {
+    .hero__soc1als {
         //---d-flex---
         justify-content: center;
         flex-wrap: wrap;

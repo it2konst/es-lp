@@ -14,7 +14,7 @@ const props = defineProps({
                     <a href="#header" class="menu-mob__link" aria-label="Home">Home</a>
                 </li>
                 <li class="menu-mob__item">
-                    <a href="#!" class="menu-mob__link" aria-label="Courses">Courses</a>
+                    <a href="#schedule" class="menu-mob__link" aria-label="Courses">Courses</a>
                 </li>
                 <li class="menu-mob__item">
                     <a href="#!" class="menu-mob__link" aria-label="About">About</a>

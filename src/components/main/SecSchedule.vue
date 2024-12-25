@@ -3,7 +3,7 @@ import SvgSchedule from './../blocks/icons/SvgSchedule.vue'
 </script>
 
 <template>
-    <section class="schedule">
+    <section class="schedule" id="schedule">
         <div class="section-container">
             <div class="app__heading-box">
                 <button class="btn">Upcoming Classes</button>

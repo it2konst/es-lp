@@ -35,7 +35,7 @@ function scrollToElement() {
 </script>
 
 <template>
-    <header id="header" class="header app-container" ref="headerFixed">
+    <header class="header app-container" id="header" ref="headerFixed">
         <!-- Component Header-->
         <Header @scroll-to-element="scrollToElement" />
     </header>

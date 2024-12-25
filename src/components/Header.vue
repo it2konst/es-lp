@@ -23,7 +23,7 @@ const emit = defineEmits(['scroll-to-element'])
         <nav class="header__nav d-flex">
             <ul class="header__menu d-flex mob-tap">
                 <li class="header__item"><a href="#header" class="header__link" aria-label="Home">Home</a></li>
-                <li class="header__item"><a href="#!" class="header__link" aria-label="Courses">Courses</a></li>
+                <li class="header__item"><a href="#schedule" class="header__link" aria-label="Courses">Courses</a></li>
                 <li class="header__item"><a href="#!" class="header__link" aria-label="About">About</a></li>
                 <li class="header__item"><a href="#!" class="header__link" aria-label="Contacts">Contacts</a></li>
             </ul>
