@@ -1,7 +1,7 @@
 <script setup>
-import Header from './components/Header.vue'
-import Main from './components/Main.vue'
-import Footer from './components/Footer.vue'
+import AppHeader from './components/AppHeader.vue'
+import TheMain from './components/TheMain.vue'
+import AppFooter from './components/AppFooter.vue'
 
 import { ref, onMounted, onUnmounted } from 'vue'
 const headerFixed = ref(null)
@@ -37,17 +37,17 @@ function scrollToElement() {
 <template>
     <header class="header app-container" id="header" ref="headerFixed">
         <!-- Component Header-->
-        <Header @scroll-to-element="scrollToElement" />
+        <AppHeader @scroll-to-element="scrollToElement" />
     </header>
 
     <main class="main app-container">
         <!-- Component Main-->
-        <Main />
+        <TheMain />
     </main>
 
     <footer class="footer app-container">
         <!-- Component Footer -->
-        <Footer />
+        <AppFooter />
     </footer>
 </template>
 

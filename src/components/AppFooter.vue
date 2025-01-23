@@ -2,7 +2,7 @@
 
 <template>
     <div class="footer__container">
-        <p class="footer__copyright"><time datetime="2024">2024</time> Проект в разработке...</p>
+        <p class="footer__copyright"><time datetime="2025"></time>A project in development</p>
     </div>
 </template>
 

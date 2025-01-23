@@ -81,6 +81,21 @@ $grid-breakpoints: (
   @return clamp(#{$minSize * 1rem}, #{math.div(math.round($yAxisIntersection * 1000), 1000) * 1rem} + #{math.div(math.round($slope * 10000), 10000) * 100vw}, #{$maxSize * 1rem});
 }
 
+@function rem-clamp($min: 16, $max: 48) {
+  $maxViewportWidth: 1200;
+  $minViewportWidth: 360;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  @return clamp(#{$minSize * 1rem}, #{math.div(math.round($yAxisIntersection * 1000), 1000) * 1rem} + #{math.div(math.round($slope * 10000), 10000) * 100vw}, #{$maxSize * 1rem});
+}
+
 @mixin flex-ctr-ctr {
   display: flex;
   align-items: center;
